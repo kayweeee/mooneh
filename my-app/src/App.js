@@ -13,7 +13,6 @@ function App() {
 
   return (
     <div className="relative">
-      <NavBar className="absolute"/>
       <div className="flex flex-col justify-center items-center h-screen gap-5">
       <p>MOONEH</p>
       <Moon />

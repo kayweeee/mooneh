@@ -1,10 +1,8 @@
 import NavBar from "./Components/NavBar";
-import StarBackground from "./Components/StarBackground";
 
 function AddExpense() {
   return (
     <div>
-      {/* <StarBackground className="z-0"/>             */}
       <NavBar className="absolute z-10"/>
     <div className="z-20 flex items-center justify-center h-screen w-screen">
       <form className="w-2/5 bg-white rounded-lg items-center py-8">
@@ -28,14 +26,14 @@ function AddExpense() {
         </div>
 
         <div className="text-xs flex justify-center items-center mb-5">
-          <p>paid by</p>
+          <p className="text-black">paid by</p>
           <select className="p-2.5 mx-2 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
             <option>you</option>
             <option>Sam</option>
             <option>Clara</option>
             <option>Santa</option>
           </select>
-          <p>split equally among</p>
+          <p className="text-black">split equally among</p>
           <select className="p-2.5 mx-2 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
             <option>everyone</option>
             <option>Sam</option>
@@ -44,7 +42,7 @@ function AddExpense() {
           </select>
         </div>
         <div className="flex justify-center">
-            <button className="bg-grey rounded-lg py-2 px-5">
+            <button className="bg-grey rounded-lg py-2 px-5 text-black">
                 Get Moondust
             </button>
         </div>

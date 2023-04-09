@@ -9,13 +9,13 @@ function GameSideBar () {
             <p>20</p>
         </div>
         <button>
-            <div className="flex rounded-full bg-black w-8 h-8 justify-center items-center">
+            <div className="flex rounded-full bg-white w-8 h-8 justify-center items-center">
                     <FontAwesomeIcon icon={faUser} style={{color: "#a5b3ca",}} />
             </div>
         </button>
         <div></div>
         <button>
-            <div className="flex rounded-full bg-black w-8 h-8 justify-center items-center">
+            <div className="flex rounded-full bg-white w-8 h-8 justify-center items-center">
                 <FontAwesomeIcon icon={faHammer} style={{color: "#a5b3ca",}} />
             </div>
         </button>

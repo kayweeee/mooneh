@@ -13,7 +13,7 @@ function ExpenseSummary() {
             {/* breakdown */}
             <div className="w-1/2 h-48 max-h-1/2 overflow-y-auto pr-1">
                 <table className="w-full border-separate border-spacing-1">
-                    <thead className="bg-grey uppercase sticky top-0">
+                    <thead className="bg-grey text-black uppercase sticky top-0">
                         <tr>
                             <th>Expense</th>
                             <th>Date</th>
