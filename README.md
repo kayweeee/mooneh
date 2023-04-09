@@ -1,6 +1,6 @@
 # mooneh.tech
 
-![](https://storage.cloud.google.com/mooneh-bucket/repo/moonbase.png)
+![moonbase](https://user-images.githubusercontent.com/72917689/230766437-43cb3f09-1dbc-469e-9d6a-db050120ac60.png)
 
 Introducing Mooneh, the out-of-this-world personal expenditure tracker that makes expense tracking fun. Earn MoonDust, buy unique Domes, and build your MoonBase while tracking your expenses!
 
