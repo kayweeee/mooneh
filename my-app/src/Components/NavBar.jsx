@@ -13,11 +13,11 @@ function NavBar() {
     className="absolute ps-7 pt-6 z-10"
     onClick={ ()=> setToggle(!toggle)}
     >
-      <FontAwesomeIcon icon={faBars} size="2xl"/>
+      <FontAwesomeIcon icon={faBars} size="2xl" style={{color:"#ffffff"}}/>
     </button>
 
     {toggle && (
-      <div className="absolute top-0 left-0 z-0 w-[30vw] ps-16 pt-20 inline-flex flex-col space-y-10 h-screen bg-grey text-l lg:text-xl font-body">
+      <div className="absolute top-0 left-0 z-0 w-[30vw] ps-16 pt-20 inline-flex flex-col space-y-10 h-screen bg-grey text-l lg:text-xl font-body text-black">
           <button 
          className="text-left"
          onClick={() => navigate('/moonvillage')}
