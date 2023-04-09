@@ -1,10 +1,8 @@
 import NavBar from "./Components/NavBar";
-import StarBackground from "./Components/StarBackground";
 
 function AddExpense() {
   return (
     <div>
-      {/* <StarBackground className="z-0"/>             */}
       <NavBar className="absolute z-10"/>
     <div className="z-20 flex items-center justify-center h-screen w-screen">
       <form className="w-2/5 bg-white rounded-lg items-center py-8">
