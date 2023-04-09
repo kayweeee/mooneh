@@ -4,7 +4,8 @@ import { faMoon, faUser, faHammer } from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
 
 const getMoonDust = async () => {
-    const backend_url = 'http://127.0.0.1:3000/accounts'
+    // const backend_url = 'http://127.0.0.1:3000/accounts'
+    const backend_url = 'http://backend.mooneh.tech/accounts'
     const response = await axios.get(backend_url)
     .then(res => {
     const moonDust = res.data[0].moonDust;
