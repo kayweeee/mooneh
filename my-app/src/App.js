@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useNavigate } from "react-router-dom";
+import Moon from "./Components/Moon";
+import NavBar from "./Components/NavBar"
 
 function App() {
+  const navigate = useNavigate()
+  document.addEventListener('keyup', event => {
+    if (event.code === 'Space') {
+       //whatever you want to do when space is pressed
+      navigate('/moonvillage')
+    }
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="relative">
+      <NavBar className="absolute"/>
+      <div className="flex flex-col justify-center items-center h-screen gap-5">
+      <p>MOONEH</p>
+      <Moon />
+      <p>Press Space to Begin</p>
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
