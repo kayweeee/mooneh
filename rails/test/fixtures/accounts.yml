@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  userName: MyString
+  expenses: MyText
+  moonDust: 1
+  moonVillage: MyText
+  totalSpent: 1
+  monthlySpent: 1
+  moonVillageSize: MyString
+  password_digest: MyString
+  confirm_token: MyString
+  email: MyString
+  name: MyString
+
+two:
+  userName: MyString
+  expenses: MyText
+  moonDust: 1
+  moonVillage: MyText
+  totalSpent: 1
+  monthlySpent: 1
+  moonVillageSize: MyString
+  password_digest: MyString
+  confirm_token: MyString
+  email: MyString
+  name: MyString

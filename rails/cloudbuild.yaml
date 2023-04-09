@@ -1,0 +1,69 @@
+# [START cloudrun_rails_cloudbuild]
+steps:
+
+# STEP 0: BUILD IMAGE
+- id: "build image"
+  name: "gcr.io/cloud-builders/docker"
+  entrypoint: 'bash'
+  args: ["-c", "docker build --build-arg MASTER_KEY=$$RAILS_KEY -t gcr.io/${PROJECT_ID}/${_SERVICE_NAME} . "]
+  secretEnv: ["RAILS_KEY"]
+
+
+
+# STEP 1: PUSH IMAGE
+- id: "push image"
+  name: "gcr.io/cloud-builders/docker"
+  args: ["push", "gcr.io/${PROJECT_ID}/${_SERVICE_NAME}"]
+
+
+
+# STEP 2: APPLY MIGRATIONS
+# - id: "apply migrations"
+#   name: "gcr.io/google-appengine/exec-wrapper"
+#   entrypoint: "bash"
+#   args:
+#     [
+#       "-c",
+#       "/buildstep/execute.sh -i gcr.io/${PROJECT_ID}/${_SERVICE_NAME} -s ${PROJECT_ID}:${_REGION}:${_INSTANCE_NAME} -e RAILS_MASTER_KEY=$$RAILS_KEY -- bundle exec rails db:migrate"
+#     ]
+#   secretEnv: ["RAILS_KEY"]
+
+
+
+# # STEP 3: RUN DEPLOY
+# - id: "run deploy"
+#   name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+#   entrypoint: gcloud
+#   args:
+#     [
+#       "run", "deploy",
+#       "${_SERVICE_NAME}",
+#       "--platform", "managed",
+#       "--region", "${_REGION}",
+#       "--image", "gcr.io/${PROJECT_ID}/${_SERVICE_NAME}",
+#       "--add-cloudsql-instances", "${PROJECT_ID}:${_REGION}:${_INSTANCE_NAME}",
+#       "--allow-unauthenticated"
+#     ]
+
+
+
+# SUBSTITUTIONS
+substitutions:
+  # _REGION: us-west1-a # change to appropriate region
+  _SERVICE_NAME: mooneh-rails # change to appropriate service name
+  # _INSTANCE_NAME: mooneh-db-instance-id # change to appropriate instance name
+  _SECRET_NAME: rails-master-key # change to appropriate secret name
+
+
+
+# GOOGLE SECRET MANAGER
+availableSecrets:
+  secretManager:
+  - versionName: projects/55088455132/secrets/${_SECRET_NAME}/versions/latest # change to appropriate versionName
+    env: "RAILS_KEY"
+
+
+
+images:
+- "gcr.io/${PROJECT_ID}/${_SERVICE_NAME}"
+# [END cloudrun_rails_cloudbuild]
